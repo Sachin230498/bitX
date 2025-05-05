@@ -47,6 +47,7 @@
 
       .golden-border-wrapper {
         padding: 7px;
+        padding-bottom: 4px;
         border-radius: 25px;
         background: linear-gradient(
           145deg,
