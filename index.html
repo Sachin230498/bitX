@@ -1,345 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/royal-exquisite"
-      rel="stylesheet"
-    />
-    <title>Document</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: #111;
-        overflow-x: hidden;
-        color: white;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link href="https://fonts.cdnfonts.com/css/royal-exquisite" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Real Gold, Real Value</title>
+</head>
+<body>
+  <video autoplay muted loop playsinline preload="none" id="bg-video" poster="images/poster.jpg">
+    <source src="./gold-bars-2.mp4" type="video/mp4" />
+  </video>
 
-      body::-webkit-scrollbar {
-        display: none;
-      }
+  <div id="video-overlay"></div>
 
-      * {
-        box-sizing: border-box;
-      }
+  <div id="nav">
+    <img src="./images/Logo.svg" alt="Logo" />
+  </div>
 
-      #bg-video,
-      #video-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        z-index: -1;
-      }
-
-      #video-overlay {
-        background-color: rgba(0, 0, 0, 0.9);
-      }
-
-      #nav {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-      }
-
-      .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 374px;
-        height: 174px;
-        margin: 20px auto 0;
-        background-color: black;
-      }
-
-      .golden-border-wrapper {
-        padding: 7px;
-        border-radius: 25px;
-        background: linear-gradient(
-          145deg,
-          #000,
-          #ffd700,
-          #594b00,
-          #ffd700,
-          #000
-        );
-      }
-
-      #upper_video {
-        border-radius: 20px;
-        width: 374px;
-        height: 174px;
-        object-fit: cover;
-      }
-
-      #main_section {
-        text-align: center;
-        margin-top: 30px;
-      }
-
-      .come {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 14px;
-        letter-spacing: 15px;
-        font-weight: 400;
-        margin-top: 50px;
-      }
-
-      .dis {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 13px;
-        color: #424242;
-        padding: 15px;
-      }
-
-      .bottom_text {
-        margin: auto;
-        width: 570px;
-        font-family: "Royal Exquisite", serif;
-        font-size: 100px;
-        font-weight: 400;
-        text-align: center;
-        background: linear-gradient(
-          90deg,
-          #221d00,
-          #ffd700,
-          #594b00,
-          #ffd700,
-          #6e5500
-        );
-        background-size: 200% auto;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .onsonic {
-        width: 284px;
-        height: 50px;
-        margin-top: 20px;
-      }
-
-      .star {
-        width: 200px;
-        margin-bottom: 50px;
-      }
-
-      .bottom-ticker {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 70%;
-        padding: 20px;
-        background: rgba(30, 30, 47, 0.4);
-        backdrop-filter: blur(20px);
-        border-radius: 35px 35px 0 0;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-        z-index: 9999;
-        overflow: hidden;
-      }
-
-      .ticker-wrapper {
-        width: 100%;
-        overflow: hidden;
-        mask-image: linear-gradient(
-          90deg,
-          transparent 0.5%,
-          white 2%,
-          white 98%,
-          transparent 99.5%
-        );
-        -webkit-mask-image: linear-gradient(
-          90deg,
-          transparent 0.5%,
-          white 2%,
-          white 98%,
-          transparent 99.5%
-        );
-        cursor: pointer;
-        height: 18px;
-      }
-
-      .ticker-content {
-        display: inline-block;
-        white-space: nowrap;
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 13px;
-        font-weight: 300;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #ffffff;
-        position: absolute;
-        will-change: transform;
-      }
-
-      .ticker-content span {
-        margin-left: 20px;
-      }
-
-      .gold-dot {
-        color: gold;
-        font-size: 20px;
-        vertical-align: middle;
-        margin-left: 8px;
-      }
-
- 
-
-      @media (max-width: 480px) {
-        #nav > img {
-          width: 50%;
-        }
-
-        .bottom_text {
-          font-size: 56px;
-          width: 340px;
-        }
-
-        .onsonic {
-          width: 280px;
-          height: 35px;
-        }
-
-        .star {
-          margin-top: 10px;
-          width: 200px;
-        }
-
-        .come {
-          margin-top: 10px;
-          margin-bottom: 15px;
-        }
-
-        .video-container {
-          margin-top: 50px;
-          width: 260px;
-          background-color: transparent;
-        }
-
-        .golden-border-wrapper {
-          padding: 5px;
-          border-radius: 20px;
-        }
-
-        #upper_video {
-          width: 260px;
-          height: 130px;
-        }
-
-        #content,
-        #gold {
-          display: none;
-        }
-        .bottom-ticker {
-       
-        width: 85%;
-        
-      }
-
-        .ticker-wrapper {
-          height: 16px;
-        }
-
-      }
-
-      @media (min-width: 1800px) and (max-width: 2100px) {
-        .bottom_text {
-          font-size: 140px;
-          width: 1000px;
-        }
-
-        .dis {
-          font-size: 15px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <video autoplay muted loop playsinline preload="auto" id="bg-video">
-      <source src="./gold-bars-2.mp4" type="video/mp4" />
-    </video>
-
-    <div id="video-overlay"></div>
-
-    <div id="nav">
-      <img src="./Dev/Desktop/Logo.svg" alt="Logo" />
+  <div class="video-container">
+    <div class="golden-border-wrapper">
+      <video muted loop autoplay playsinline preload="none" id="upper_video" poster="images/poster.jpg">
+        <source src="./gold-bars-2.mp4" type="video/mp4" />
+      </video>
     </div>
+  </div>
 
-    <div class="video-container">
-      <div class="golden-border-wrapper">
-        <video muted loop autoplay playsinline preload="auto" id="upper_video">
-          <source src="./gold-bars-2.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </div>
+  <div id="main_section">
+    <p class="come">COMING SOON</p>
+    <h1 class="bottom_text">REAL GOLD, REAL VALUE</h1>
+    <img class="onsonic" src="./images/last_logo.svg" alt="On Sonic Logo" />
+    <br />
+    <img class="star" src="./images/start.svg" alt="Star Icon" />
 
-    <div id="main_section">
-      <p class="come">COMING SOON</p>
-      <h1 class="bottom_text">REAL GOLD, REAL VALUE</h1>
-      <img class="onsonic" src="./last_logo.svg" alt="On Sonic Logo" />
-      <br />
-      <img class="star" src="./3.svg" alt="Star Icon" />
-
-      <div class="bottom-ticker">
-        <div class="ticker-wrapper">
-          <div class="ticker-content" id="ticker">
-            <span>
-              A revolutionary RWA project backed by officially registered gold
-              in Hong Kong — bringing the stability of gold to the speed of
-              Sonic
-              <span id="gold" class="gold-dot">•</span>
-            </span>
-            <span id="content">
-              A revolutionary RWA project backed by officially registered gold
-              in Hong Kong — bringing the stability of gold to the speed of
-              Sonic
-              <span class="gold-dot">•</span>
-            </span>
-          </div>
+    <div class="bottom-ticker">
+      <div class="ticker-wrapper">
+        <div class="ticker-content" id="ticker">
+          <span>
+            A revolutionary RWA project backed by officially registered gold in Hong Kong — bringing the stability of gold to the speed of Sonic
+            <span id="gold" class="gold-dot">•</span>
+          </span>
+          <span id="content">
+            A revolutionary RWA project backed by officially registered gold in Hong Kong — bringing the stability of gold to the speed of Sonic
+            <span class="gold-dot">•</span>
+          </span>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+
+  <script src="js/ticker.js"></script>
+</body>
 </html>
-<script>
-  const ticker = document.getElementById("ticker");
-  let position = 0;
-  let speed = 0.8; // default speed
-  let requestId;
-
-  function animate() {
-    position -= speed;
-    ticker.style.transform = `translateX(${position}px)`;
-
-    // Reset if it goes out of view (loop effect)
-    if (position < -ticker.offsetWidth / 2) {
-      position = 0;
-    }
-
-    requestId = requestAnimationFrame(animate);
-  }
-
-  // Start animation
-  animate();
-
-  // On hover - slow down
-  document.querySelector(".ticker-wrapper").addEventListener("mouseenter", () => {
-    speed = 0.3; // slow speed
-  });
-
-  // On mouse leave - normal speed
-  document.querySelector(".ticker-wrapper").addEventListener("mouseleave", () => {
-    speed = 1; // normal speed
-  });
-</script>
-
