@@ -190,7 +190,7 @@ body::-webkit-scrollbar {
 
   #bottom{
     display: block;
-    height: 36px;
+    /* height: 40px; */
     width: 150px;
     margin: auto;
     margin-bottom: 100px;
