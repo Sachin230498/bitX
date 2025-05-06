@@ -231,7 +231,7 @@ height: 35px;
   }
 
   .star {
-    margin-top: 10px;
+    /* margin-top: 0px; */
     width: 200px;
   }
 
