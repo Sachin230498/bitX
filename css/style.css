@@ -206,11 +206,10 @@ body::-webkit-scrollbar {
   }
 
   #nav>div{
- /* display: none; */
  position: absolute;
  top: 88%;
- left: 40%;
- /* border: 2px solid; */
+ left: 35%;
+
 display: flex;
 justify-content: center;
 height: 35px;
@@ -228,10 +227,11 @@ height: 35px;
   .onsonic {
     width: 280px;
     height: 35px;
+    margin-top: 10px;
   }
 
   .star {
-    /* margin-top: 0px; */
+    margin-top: 0px;
     width: 200px;
   }
 
