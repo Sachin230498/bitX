@@ -41,6 +41,7 @@ body::-webkit-scrollbar {
 
 #nav > div {
   height: 35px;
+  width: 130px;
   /* border: 4px solid; */
 }
 #brand_logo_2{
@@ -51,9 +52,18 @@ body::-webkit-scrollbar {
   /* border: 4px solid;  */
 }
 
-#nav > div > img {
-  width: 30%;
+.hov{
+  width: 35px;
   height: 100%;
+  transition: transform 0.3s ease;
+}
+.hov {
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.hov:hover {
+  transform: scale(1.2);
+
 }
 
 .video-container {
@@ -206,12 +216,19 @@ body::-webkit-scrollbar {
     margin-bottom: 100px;
    /* border: 2px solid; */
   }
-  #bottom>img{
-    display: inline-block;
-    width: 30%;
-    height: 100%;
 
+  .hov1{
+    width: 40px;
+    height: 100%;
+    transition: transform 0.3s ease;
   }
+  
+  
+  .hov1:hover,
+  .hov1:active {
+    transform: scale(1.2);
+  }
+
 
   .bottom_text {
     font-size: 56px;
