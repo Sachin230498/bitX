@@ -77,7 +77,7 @@ body::-webkit-scrollbar {
 }
 
 .golden-border-wrapper {
-  padding: 7px 7px 4px 7px;
+  padding: 7px 7px 2px 7px;
   border-radius: 25px;
   background: linear-gradient(145deg, #000, #ffd700, #594b00, #ffd700, #000);
 }
@@ -259,6 +259,7 @@ body::-webkit-scrollbar {
 
   .golden-border-wrapper {
     padding: 5px;
+    padding-bottom: 1px;
     border-radius: 20px;
   }
 
